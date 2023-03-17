@@ -14,4 +14,4 @@ jobs:
       -run: | 
         docker build . -f Dockerfile -t billybackmanh/helloworld:latest \
           --build-arg ARTIFACTORY_USERNAME=${{ secrets.SE_KAROLINSKA_ARTIFACTORY_CI_USERNAME }}
-      - run: docker push billybackmanh/helloworld:latest
+      - run: docker push billybackmanh/helloworld
