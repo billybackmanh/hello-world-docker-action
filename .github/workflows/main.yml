@@ -12,5 +12,7 @@ jobs:
           who-to-greet: 'Mona the Octocat'
       # Use the output from the `hello` step
       - name: Get the output time
-      - run: docker build . -f Dockerfile -t billybackmanh/helloworld:latest \
-             docker push billybackmanh/helloworld:latest
+      - run: | 
+          docker build . -f Dockerfile -t billybackmanh/helloworld:latest \
+             --build-arg ARTIFACTORY_USERNAME=${{ secrets.SE_KAROLINSKA_ARTIFACTORY_CI_USERNAME }}
+      - run: docker push billybackmanh/helloworld:latest
